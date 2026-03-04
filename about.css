@@ -127,11 +127,14 @@ body.dark-mode .bento-item {
 .bento-item p { line-height: 1.6; opacity: 0.8; }
 
 .avatar { 
-    align-items: center; 
-    background: #e0e0e0; 
+    /*align-items: center; 
+    background: #e0e0e0; */
+    background-image: url(https://github.com/ADoNiAiNa/portfolio2.0/blob/main/images/@oliash.photo-58.jpg?raw=true); 
+    background-size: cover;
+    grid-row: span 2;
 }
 body.dark-mode .avatar { 
-    background-image: url(/images/@oliash.photo-58.jpg); 
+    background-image: url(https://github.com/ADoNiAiNa/portfolio2.0/blob/main/images/@oliash.photo-58.jpg?raw=true); 
     background-size: cover;
     grid-row: span 2;
 }
