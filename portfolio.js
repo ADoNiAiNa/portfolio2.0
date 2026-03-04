@@ -57,3 +57,90 @@ function typeEffect() {
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeEffect, 1500); // Attend que l'animation "PORTFOLIO" se termine
 });
+
+
+/*************************page projets**************************************** */
+// --- 3. SYSTÈME DE FILTRE ET RECHERCHE (PAGE PROJETS) ---
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const searchInput = document.getElementById('project-search');
+const projectCards = document.querySelectorAll('.project-card');
+
+function filterProjects() {
+    const searchTerm = searchInput ? searchInput.value.toLowerCase() : "";
+    const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || "all";
+
+    projectCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const category = card.dataset.category;
+        
+        const matchesSearch = title.includes(searchTerm);
+        const matchesFilter = activeFilter === "all" || category === activeFilter;
+
+        if (matchesSearch && matchesFilter) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+// Écouteur pour les boutons de filtre
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        btn.classList.add('active');
+        filterProjects();
+    });
+});
+
+// Écouteur pour la recherche
+if (searchInput) {
+    searchInput.addEventListener('input', filterProjects);
+}
+
+
+/**art galerie ***********************************/
+const gallery = document.getElementById('gallery');
+    const photos = document.querySelectorAll('.photo');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalText = document.getElementById('modal-text');
+    const close = document.getElementById('close');
+
+    let dispersed = false;
+
+    // Disperser les photos au hover
+    gallery.addEventListener('mouseenter', () => {
+      if (dispersed) return;
+      dispersed = true;
+
+      photos.forEach((photo, index) => {
+        const x = (index % 2) * 50 + Math.random() * 40;
+        const y = Math.floor(index / 2) * 40 + Math.random() * 30;
+
+        photo.style.top = `${y}%`;
+        photo.style.left = `${x}%`;
+        photo.style.transform = 'rotate(0deg)';
+      });
+    });
+
+    // Ouvrir la modal
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = photo.src;
+        modalText.textContent = photo.dataset.text;
+      });
+    });
+
+    // Fermer la modal
+    close.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });

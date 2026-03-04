@@ -1,0 +1,159 @@
+/* Variables CSS pour le Dark/Light Mode */
+:root {
+    --bg-color: #f8f9fa; /* Blanc cassé */
+    --text-color: #121212; /* Noir profond */
+    --grid-color: rgba(0, 0, 0, 0.05);
+    --accent-color: #ff3b30; /* Touche de couleur type app (rouge iOS) */
+}
+
+/* Classe ajoutée via JS pour le mode sombre */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --grid-color: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+    
+    /* La grille japonaise minimaliste */
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* --- NAVIGATION --- */
+.app-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
+    z-index: 100;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* pile de photo  **************/
+/* ====== GALERIE ====== */
+    .gallery {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .photo {
+      position: absolute;
+      width: 220px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 
+        transform 0.8s ease,
+        top 0.8s ease,
+        left 0.8s ease,
+        box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* pile de photos au centre */
+    .stacked {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(var(--rotation));
+    }
+
+    .photo:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    }
+
+    /* ====== MODAL ====== */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .modal-content {
+      background: #1a1a1a;
+      width: 80%;
+      height: 70%;
+      display: flex;
+      border-radius: 12px;
+      overflow: hidden;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .modal img {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    .modal-text {
+      width: 50%;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .modal-text h2 {
+      margin-bottom: 15px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }

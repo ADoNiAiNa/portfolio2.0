@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Galerie | Projets</title>
+    <link rel="stylesheet" href="projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="app-nav">
+        <div class="logo">ANDO</div>
+        <nav class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">À propos</a>
+            <a href="projects.html" class="active">Projets</a>
+            <a href="galerie.html">Passions</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button id="theme-toggle">🌓</button>
+    </header>
+
+    <main class="page-container">
+        <section class="projects-header">
+            <h1 class="section-title">Exposition</h1>
+            
+            <div class="controls-container">
+                <input type="text" id="project-search" placeholder="Rechercher un projet...">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="ux">UX/UI</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-grid" id="projects-grid">
+            <article class="project-card" data-category="ux">
+                <div class="project-frame">
+                    <div class="project-image-placeholder">🖼️ Image UX</div>
+                    <div class="project-overlay">
+                        <span>Voir le Case Study</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Application Fintech</h3>
+                    <p>UX Research & Interface</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="web">
+                <div class="project-frame">
+                    <div class="project-image-placeholder">💻 Design Web</div>
+                    <div class="project-overlay">
+                        <span>Voir le Case Study</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce Minimaliste</h3>
+                    <p>Webflow Development</p>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="branding">
+                <div class="project-frame">
+                    <div class="project-image-placeholder">🎨 Identité</div>
+                    <div class="project-overlay">
+                        <span>Voir le Case Study</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Studio d'Architecture</h3>
+                    <p>Branding & Logo</p>
+                </div>
+            </article>
+            
+            </section>
+    </main>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* Variables CSS pour le Dark/Light Mode */
+:root {
+    --bg-color: #f8f9fa; /* Blanc cassé */
+    --text-color: #121212; /* Noir profond */
+    --grid-color: rgba(0, 0, 0, 0.05);
+    --accent-color: #ff3b30; /* Touche de couleur type app (rouge iOS) */
+}
+
+/* Classe ajoutée via JS pour le mode sombre */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --grid-color: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+    
+    /* La grille japonaise minimaliste */
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* --- NAVIGATION --- */
+.app-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
+    z-index: 100;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blink-title {
+    font-size: 8rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    animation: blinkIn 2s ease-out forwards;
+}
+
+
+/* Texte stylisé pour PORTFOLIO */
+.portfolio {
+  text-transform: uppercase;
+  font-size: 100px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: transparent;
+  text-shadow: 10px 10px 0 #000000, 15px 15px 0 #ffffff;
+  align-items: center;
+}
+
+.portfolio:hover {
+  text-shadow: 10px 10px 0 #dce30ab0, 15px 15px 0 #17c548c5, 45px 45px 10px #b150d1c6;
+  text-decoration: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 45px ;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/*------------------------------*/
+
+
+
+@keyframes blinkIn {
+    0%, 20%, 40% { opacity: 0; }
+    10%, 30%, 50% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+.subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.cursor {
+    color: var(--accent-color);
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* --- CARROUSEL INFINI --- */
+.carousel-section {
+    padding: 100px 0;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.carousel-track {
+    display: inline-flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused; /* Pause au survol */
+}
+
+.carousel-item {
+    width: 300px;
+    height: 400px;
+    margin: 0 20px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 10px; /* Bordures douces type App */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05); /* Effet d'engagement */
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Nécessite la duplication des items en HTML */
+}
