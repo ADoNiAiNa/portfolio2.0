@@ -79,8 +79,8 @@ body {
 
     .photo {
       position: absolute;
-      width: 150;
-      /*height: 300px;*/
+      width: auto;
+      height: auto;
       object-fit: cover;
       border-radius: 8px;
       cursor: pointer;
