@@ -132,13 +132,13 @@ body.dark-mode .bento-item {
     background-image: url(https://github.com/ADoNiAiNa/portfolio2.0/blob/main/images/@oliash.photo-58.jpg?raw=true); 
     background-size: cover;
     grid-row: span 2;
-    grid-column: span 1;
+
 }
 body.dark-mode .avatar { 
     background-image: url(https://github.com/ADoNiAiNa/portfolio2.0/blob/main/images/@oliash.photo-58.jpg?raw=true); 
     background-size: cover;
     grid-row: span 2;
-    grid-column: span 1;
+   
 }
     
     
