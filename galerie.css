@@ -89,9 +89,6 @@ body {
 }
 
 
-/***********************************/
-
-
 .page-container {
   padding: 120px 5% 50px 5%; /* Espace pour que  la navbar ne cache pas */
   max-width: 1900px;

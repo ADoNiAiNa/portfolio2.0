@@ -189,6 +189,12 @@ body.dark-mode .project-frame {
   transition: transform 0.5s ease;
 }
 
+.project-image-placeholder img {
+  width: 100%;
+  
+}
+
+
 /* Effet Overlay (Dopamine / Récompense) */
 .project-overlay {
   position: absolute;
