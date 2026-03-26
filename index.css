@@ -149,33 +149,31 @@ body {
 /* Running Text Tape */
 .tape-wrapper_1 {
   position: absolute;
+  
   /*bottom: 85vh;*/
-  bottom: 75vh;
+  top: 7vh;
   /*left: -10%;*/
-  width: 120%;
+
+  width: 150%;
+  height: 80px;
+
   justify-content: flex-start;
-  
-  
+  background-color: white;
+  color: #000000;
+  opacity: 0.4;
   /*transform: rotate(14deg);*/
   padding: 10px 0;
   
 }
 
-.tape-wrapper_2 {
+.tape-wrapper_1 div{
+  right: 15vw;
   position: absolute;
-  /*bottom: 85vh;*/
-  bottom: 15vh;
-  /*left: -10%;*/
-  width: 120%;
-  justify-content: flex-start;
   
-
-  
-  /*transform: rotate(14deg);*/
-  padding: 10px 0;
   
 }
 
+/*
 .conteneur_image_carousel .image-carousel{
   max-width: 100px;
   margin: 0 25px 0 25px;
@@ -188,7 +186,7 @@ body {
 
 }
 
-
+*/
 
 
 .tape-wrapper_3 {
@@ -207,23 +205,16 @@ body {
 
 
 
-.tape-text_1 {
-  
-  font-size: 2rem;
+.tape-text_1 div {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3rem;
   font-weight: 800;
   white-space: nowrap;
   animation: tapeScroll_1 25s linear infinite;
   
 }
 
-.tape-text_2 {
-  
-  font-size: 2rem;
-  font-weight: 800;
-  white-space: nowrap;
-  animation: tapeScroll_1 25s linear infinite;
-  
-}
+
 
 
 
@@ -235,6 +226,11 @@ body {
   animation: tapeScroll_3 25s linear infinite;
 }
 
+@keyframes tapeScroll_1{
+  to {
+    transform: translateX(40%);
+  }
+}
 
 
 @keyframes tapeScroll_3 {
