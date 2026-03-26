@@ -1,199 +1,340 @@
-/* Variables CSS pour le Dark/Light Mode */
 :root {
-    --bg-color: #f8f9fa; /* Blanc cassé */
-    --text-color: #121212; /* Noir profond */
-    --grid-color: rgba(0, 0, 0, 0.05);
-    --accent-color: #ff3b30; /* Touche de couleur type app (rouge iOS) */
+  --bg-color: #050505;
+  --grid-color: rgba(255, 255, 255, 0.05);
+  --accent-color: #92e002; /* Bleu néon (Cyberpunk/Synthwave) */
+  --text-color: #ffffff;
 }
 
-/* Classe ajoutée via JS pour le mode sombre */
-body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #f8f9fa;
-    --grid-color: rgba(255, 255, 255, 0.05);
+.project-overlay span a{
+  color: var(--accent-color);
+  text-decoration: none;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none; /* On cache le curseur par défaut pour mettre le nôtre */
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    overflow-x: hidden;
-    
-    /* La grille japonaise minimaliste */
-    background-image: 
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 40px 40px;
+  background-color: var(--bg-color);
+  /* Création de la grille de fond */
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  color: var(--text-color);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Scrolling fluide */
 }
+
+
+/******************curseur */
+/* === 2. CURSEUR PERSONNALISÉ === */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none; /* Pour ne pas bloquer les clics */
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background-color 0.2s;
+  z-index: 9999;
+  background-color: rgb(154, 255, 95);
+}
+
+.custom-cursor.hovered {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(154, 255, 95, 0.007);
+}
+
+
 
 /* --- NAVIGATION --- */
 .app-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: transparent;
-    backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: transparent;
+  backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
+  z-index: 100;
 }
 
 .nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 400;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.nav-links a.active, .nav-links a:hover {
-    font-weight: 700;
-    border-bottom: 2px solid var(--accent-color);
+.nav-links a.active,
+.nav-links a:hover {
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-color);
 }
 
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+/*#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}*/
 
 /*container general baissser pour ne pas être caché par le nav*/
-.page-container{
-    margin: 5%;
-}
+.page-container {
+  margin: 90px 25px 0 25px;
 
+}
 
 /* --- SECTION PROJETS --- */
 .controls-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 60px;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 #project-search {
-    padding: 15px 25px;
-    border-radius: 50px;
-    border: 1px solid var(--grid-color);
-    background: var(--bg-color);
-    color: var(--text-color);
-    width: 300px;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.3s;
+  padding: 15px 25px;
+  border-radius: 50px;
+  border: 1px solid var(--grid-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+  width: 300px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
 #project-search:focus {
-    border-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .filter-group {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
 }
 
 .filter-btn {
-    padding: 10px 20px;
-    border-radius: 50px;
-    border: 1px solid var(--grid-color);
-    background: transparent;
-    color: var(--text-color);
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid var(--grid-color);
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
-.filter-btn.active, .filter-btn:hover {
-    background: var(--text-color);
-    color: var(--bg-color);
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
 }
 
 /* Grille de projets (Exposition) */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 50px;
 }
 
 .project-card {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    animation: fadeIn 0.6s ease forwards;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  animation: fadeIn 0.6s ease forwards;
 }
 
 .project-frame {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background: #e0e0e0;
-    overflow: hidden;
-    border: 1px solid var(--grid-color); /* Le cadre de la peinture */
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #383737b6;
+  overflow: hidden;
+  border: 1px solid var(--grid-color); /* Le cadre de la peinture */
 }
 
-body.dark-mode .project-frame { background: #222; }
+body.dark-mode .project-frame {
+  background: #222;
+}
 
 .project-image-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  transition: transform 0.5s ease;
 }
 
 /* Effet Overlay (Dopamine / Récompense) */
 .project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-overlay span {
-    color: white;
-    border: 1px solid white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-overlay { opacity: 1; }
-.project-card:hover .project-overlay span { transform: translateY(0); }
-.project-card:hover .project-image-placeholder { transform: scale(1.1); }
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+.project-card:hover .project-overlay span {
+  transform: translateY(0);
+}
+.project-card:hover .project-image-placeholder {
+  transform: scale(1.1);
+}
 
 .project-info {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-.project-info h3 { font-size: 1.4rem; margin-bottom: 5px; }
-.project-info p { opacity: 0.6; font-size: 0.9rem; text-transform: uppercase; }
+.project-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.project-info p {
+  opacity: 0.6;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* === 7. MENU BURGER & RESPONSIVE === */
+
+/* Style du bouton burger (caché par défaut sur PC) */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 101; /* Toujours au-dessus du menu déployé */
+}
+
+/* Les 3 barres du burger */
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* MEDIA QUERY : Écrans de taille Tablette et Mobile */
+@media screen and (max-width: 768px) {
+
+  .filter-group {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 10px;
+  z-index: 10;
+  
+  }
+
+
+  
+  /* On affiche le burger */
+  .burger-menu {
+    display: block;
+  }
+
+  /* On transforme la barre de liens en menu plein écran */
+  .nav-links {
+    position: fixed;
+    right: -100%; /* Caché hors de l'écran par défaut */
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(5, 5, 5, 0.95); /* Ton bg-color avec légère transparence */
+    backdrop-filter: blur(15px); /* Garde l'effet verre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+  }
+
+  /* On grossit et espace les liens pour le tactile */
+  .nav-links a {
+    margin: 20px 0;
+    font-size: 1.5rem;
+  }
+
+  /* Classe qui sera ajoutée en JS pour ouvrir le menu */
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  /* Animations pour transformer le burger en croix (X) quand il est ouvert */
+  .burger-menu.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: var(--accent-color); /* Devient couleur néon */
+  }
+  
+  .burger-menu.toggle .line2 {
+    opacity: 0;
+  }
+  
+  .burger-menu.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: var(--accent-color);
+  }
+  
+  /* Ajustement de ton titre "PORTFOLIO" pour qu'il rentre sur mobile */
+  .portfolio {
+    font-size: 18vw; 
+  }
 }

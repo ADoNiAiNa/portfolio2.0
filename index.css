@@ -1,193 +1,402 @@
-/* Variables CSS pour le Dark/Light Mode */
 :root {
-    --bg-color: #f8f9fa; /* Blanc cassé */
-    --text-color: #121212; /* Noir profond */
-    --grid-color: rgba(0, 0, 0, 0.05);
-    --accent-color: #ff3b30; /* Touche de couleur type app (rouge iOS) */
+  --bg-color: #050505;
+  --grid-color: rgba(255, 255, 255, 0.05);
+  --accent-color: #92e002; /* Bleu néon (Cyberpunk/Synthwave) */
+  --text-color: #ffffff;
 }
 
-/* Classe ajoutée via JS pour le mode sombre */
-body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #f8f9fa;
-    --grid-color: rgba(255, 255, 255, 0.05);
+span{
+  color:var(--accent-color)
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none; /* On cache le curseur par défaut pour mettre le nôtre */
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    overflow-x: hidden;
-    
-    /* La grille japonaise minimaliste */
-    background-image: 
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 40px 40px;
+  background-color: var(--bg-color);
+  /* Création de la grille de fond */
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  color: var(--text-color);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Scrolling fluide */
 }
+
+/******************curseur */
+/* === 2. CURSEUR PERSONNALISÉ === */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none; /* Pour ne pas bloquer les clics */
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background-color 0.2s;
+  z-index: 9999;
+  background-color: rgb(154, 255, 95);
+}
+
+.custom-cursor.hovered {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(154, 255, 95, 0.007);
+}
+
+/*header********************************/
 
 /* --- NAVIGATION --- */
 .app-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: transparent;
-    backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: transparent;
+  backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
+  z-index: 100;
 }
 
 .nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 400;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.nav-links a.active, .nav-links a:hover {
-    font-weight: 700;
-    border-bottom: 2px solid var(--accent-color);
+.nav-links a.active,
+.nav-links a:hover {
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-color);
 }
 
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
+/*hero section*****/
 /* --- HERO SECTION --- */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.blink-title {
-    font-size: 8rem;
-    font-weight: 900;
-    letter-spacing: -2px;
-    animation: blinkIn 2s ease-out forwards;
-}
-
 
 /* Texte stylisé pour PORTFOLIO */
 .portfolio {
   text-transform: uppercase;
-  font-size: 100px;
+  font-size: 13vw;
   font-weight: 700;
   font-style: italic;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   color: transparent;
-  text-shadow: 10px 10px 0 #000000, 15px 15px 0 #ffffff;
+  text-shadow:
+    
+
+    10px 10px 0 #dce30ab0,
+    15px 15px 0 #17c548c5,
+    45px 45px 10px #b150d1c6;
+  text-decoration: none;
+  
   align-items: center;
 }
 
-.portfolio:hover {
-  text-shadow: 10px 10px 0 #dce30ab0, 15px 15px 0 #17c548c5, 45px 45px 10px #b150d1c6;
-  text-decoration: none;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 45px ;
-}
-
-button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-/*------------------------------*/
-
-
-
-@keyframes blinkIn {
-    0%, 20%, 40% { opacity: 0; }
-    10%, 30%, 50% { opacity: 1; }
-    100% { opacity: 1; }
-}
 
 .subtitle {
-    font-size: 2rem;
-    font-weight: 300;
-    margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 20px;
 }
 
 .cursor {
-    color: var(--accent-color);
-    animation: blinkCursor 0.8s infinite;
+  color: var(--accent-color);
+  animation: blinkCursor 0.8s infinite;
 }
 
-@keyframes blinkCursor {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+
+/* === 3. SECTION HERO (L'ORBITE) === */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* --- CARROUSEL INFINI --- */
-.carousel-section {
-    padding: 100px 0;
+/*bandeau carousel***************/
+/* Running Text Tape */
+.tape-wrapper_1 {
+  position: absolute;
+  /*bottom: 85vh;*/
+  bottom: 75vh;
+  /*left: -10%;*/
+  width: 120%;
+  justify-content: flex-start;
+  
+  
+  /*transform: rotate(14deg);*/
+  padding: 10px 0;
+  
 }
 
+.tape-wrapper_2 {
+  position: absolute;
+  /*bottom: 85vh;*/
+  bottom: 15vh;
+  /*left: -10%;*/
+  width: 120%;
+  justify-content: flex-start;
+  
+
+  
+  /*transform: rotate(14deg);*/
+  padding: 10px 0;
+  
+}
+
+.conteneur_image_carousel .image-carousel{
+  max-width: 100px;
+  margin: 0 25px 0 25px;
+  opacity: 0.2;
+
+}
+
+.conteneur_image_carousel .image-carousel:hover{
+  opacity: 1;
+
+}
+
+
+
+
+.tape-wrapper_3 {
+  position: absolute;
+  /*bottom: 5vh;*/
+  bottom: 0vh;
+  /*left: -10%;*/
+  width: 120%;
+ background-color: white;
+  color: #000000;
+  /*transform: rotate(-14deg);*/
+  padding: 10px 0;
+  opacity: 0.4;
+}
+
+
+
+
+.tape-text_1 {
+  
+  font-size: 2rem;
+  font-weight: 800;
+  white-space: nowrap;
+  animation: tapeScroll_1 25s linear infinite;
+  
+}
+
+.tape-text_2 {
+  
+  font-size: 2rem;
+  font-weight: 800;
+  white-space: nowrap;
+  animation: tapeScroll_1 25s linear infinite;
+  
+}
+
+
+
+.tape-text_3 {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  white-space: nowrap;
+  animation: tapeScroll_3 25s linear infinite;
+}
+
+
+
+@keyframes tapeScroll_3 {
+  to {
+    transform: translateX(-120%);
+  }
+}
+
+
+
+
+/* === 4. PROPOSITION DE VALEUR === */
+.tagline {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.5rem;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === 5. CARROUSEL FLUIDE === */
 .carousel-container {
-    overflow: hidden;
-    width: 100%;
-    white-space: nowrap;
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Cache la scrollbar sur Firefox */
 }
 
-.carousel-track {
-    display: inline-flex;
-    animation: scroll 20s linear infinite;
-}
-
-.carousel-track:hover {
-    animation-play-state: paused; /* Pause au survol */
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Cache la scrollbar sur Chrome/Safari */
 }
 
 .carousel-item {
-    width: 300px;
-    height: 400px;
-    margin: 0 20px;
-    background: var(--text-color);
-    color: var(--bg-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    border-radius: 10px; /* Bordures douces type App */
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  flex: 0 0 auto;
+  width: 300px;
+  height: 400px;
+  margin: 0 20px;
+  background-color: #111;
+  border-radius: 15px;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border: 1px solid #333;
+  transition:
+    border-color 0.3s,
+    transform 0.3s;
 }
 
 .carousel-item:hover {
-    transform: scale(1.05); /* Effet d'engagement */
+  border-color: var(--accent-color);
+  transform: translateY(-10px);
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Nécessite la duplication des items en HTML */
+/* === 6. CALL TO ACTION === */
+.cta-section:hover {
+  text-align: center;
+  
+}
+
+.cta-section {
+  margin-top: 35px;
+  
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 4rem;
+  font-size: 1.5rem;
+  color: var(--bg-color);
+  background-color: var(--accent-color);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.cta-button:hover {
+  background-color: #fff;
+  box-shadow: 0 0 30px #fff;
+}
+
+
+
+
+/* === 7. MENU BURGER & RESPONSIVE === */
+
+/* Style du bouton burger (caché par défaut sur PC) */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 101; /* Toujours au-dessus du menu déployé */
+}
+
+/* Les 3 barres du burger */
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* MEDIA QUERY : Écrans de taille Tablette et Mobile */
+@media screen and (max-width: 768px) {
+  
+  /* On affiche le burger */
+  .burger-menu {
+    display: block;
+  }
+
+  /* On transforme la barre de liens en menu plein écran */
+  .nav-links {
+    position: fixed;
+    right: -100%; /* Caché hors de l'écran par défaut */
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(5, 5, 5, 0.95); /* Ton bg-color avec légère transparence */
+    backdrop-filter: blur(15px); /* Garde l'effet verre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+  }
+
+  /* On grossit et espace les liens pour le tactile */
+  .nav-links a {
+    margin: 20px 0;
+    font-size: 1.5rem;
+  }
+
+  /* Classe qui sera ajoutée en JS pour ouvrir le menu */
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  /* Animations pour transformer le burger en croix (X) quand il est ouvert */
+  .burger-menu.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: var(--accent-color); /* Devient couleur néon */
+  }
+  
+  .burger-menu.toggle .line2 {
+    opacity: 0;
+  }
+  
+  .burger-menu.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: var(--accent-color);
+  }
+  
+  /* Ajustement de ton titre "PORTFOLIO" pour qu'il rentre sur mobile */
+  .portfolio {
+    font-size: 18vw; 
+  }
 }

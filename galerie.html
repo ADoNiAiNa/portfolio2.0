@@ -1,68 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Galerie | Passions</title>
-    <link rel="stylesheet" href="galerie.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="passions-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Galerie Minimaliste</title>
+    <link rel="stylesheet" href="galerie.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+
     <header class="app-nav">
-      <div class="logo">JK.</div>
-      <nav class="nav-links">
-        <a href="index.html">Accueil</a>
-        <a href="about.html">À propos</a>
-        <a href="projects.html">Projets</a>
-        <a href="galerie.html" class="active">Passions</a>
-        <a href="contact.html">Contact</a>
+      <div class="logo">ANDO</div>
+      
+      <div class="burger-menu" id="burger-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="/index.html" class="interactive">Accueil</a>
+        <a href="/about.html" class="interactive">À propos</a>
+        <a href="/projects.html" class="interactive">Projets</a>
+        <a href="/galerie.html" class="active interactive">Galerie</a>
       </nav>
-      <button id="theme-toggle">🌓</button>
     </header>
 
-    <!-- GALERIE -->
-    <div class="gallery" id="gallery">
-      <img
-        src="images/photo1.jpg"
-        class="photo stacked"
-        data-text="Description du projet 1"
-        style="--rotation: -10deg"
-      />
-      <img
-        src="images/photo2.jpg"
-        class="photo stacked"
-        data-text="Description du projet 2"
-        style="--rotation: 5deg"
-      />
-      <img
-        src="images/photo3.jpg"
-        class="photo stacked"
-        data-text="Description du projet 3"
-        style="--rotation: 15deg"
-      />
-      <img
-        src="images/photo4.jpg"
-        class="photo stacked"
-        data-text="Description du projet 4"
-        style="--rotation: -5deg"
-      />
-    </div>
 
-    <!-- MODAL -->
-    <div class="modal" id="modal">
-      <span class="close" id="close">&times;</span>
-      <div class="modal-content">
-        <img id="modal-img" src="" />
-        <div class="modal-text">
-          <h2>Projet</h2>
-          <p id="modal-text"></p>
+    <main class="page-container gallery-container">
+        
+        <h1 class="section-title">Exposition</h1>
+        
+        <div class="gallery-layout">
+            
+            <aside class="gallery-sidebar">
+                <h3>Catégories</h3>
+                <div class="filter-menu-vertical">
+                    <button class="filter-btn active" data-filter="all">Tout voir</button>
+                    <button class="filter-btn" data-filter="ui">UI Design</button>
+                    <button class="filter-btn" data-filter="illustration">Illustration</button>
+                    <button class="filter-btn" data-filter="photo">Photographie</button>
+                </div>
+            </aside>
+
+            <section class="minimal-grid" id="gallery-grid">
+                
+                <div class="grid-item" data-category="ui" data-title="App Bancaire" data-client="Projet Perso" data-desc="Design d'interface minimaliste.">
+                    <div class="item-visual active interactive" >
+                        <img src="/images/charte_1_relous.png" alt="Aperçu App Bancaire">
+                    </div>
+                </div>
+
+                <div class="grid-item" data-category="illustration" data-title="Tokyo Night" data-client="Exposition" data-desc="Illustration digitale.">
+                    <div class="item-visual">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=600&auto=format&fit=crop" alt="Illustration Tokyo">
+                    </div>
+                </div>
+
+                <div class="grid-item" data-category="photo" data-title="Brutalisme" data-client="Série Photo" data-desc="Photographie d'architecture contemporaine.">
+                    <div class="item-visual">
+                        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=600&auto=format&fit=crop" alt="Photo Brutalisme">
+                    </div>
+                </div>
+
+                <div class="grid-item" data-category="ui" data-title="E-commerce" data-client="Concept" data-desc="Refonte UX/UI d'une boutique en ligne.">
+                    <div class="item-visual">
+                        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=600&auto=format&fit=crop" alt="Maquette E-commerce">
+                    </div>
+                </div>
+                <div class="grid-item" data-category="ui" data-title="E-commerce" data-client="Concept" data-desc="Refonte UX/UI d'une boutique en ligne.">
+                    <div class="item-visual">
+                        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=600&auto=format&fit=crop" alt="Maquette E-commerce">
+                    </div>
+                </div>
+                <div class="grid-item" data-category="ui" data-title="E-commerce" data-client="Concept" data-desc="Refonte UX/UI d'une boutique en ligne.">
+                    <div class="item-visual">
+                        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=600&auto=format&fit=crop" alt="Maquette E-commerce">
+                    </div>
+                </div>
+                <div class="grid-item" data-category="ui" data-title="E-commerce" data-client="Concept" data-desc="Refonte UX/UI d'une boutique en ligne.">
+                    <div class="item-visual">
+                        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=600&auto=format&fit=crop" alt="Maquette E-commerce">
+                    </div>
+                </div>
+
+            </section>
         </div>
-      </div>
+    </main>
+
+    <div class="gallery-modal" id="gallery-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">✕</button>
+            
+            <div class="modal-visual" id="modal-visual-content">
+                </div>
+            
+            <div class="modal-info">
+                <h2 id="modal-title">Titre</h2>
+                <span class="modal-meta" id="modal-client">Client</span>
+                <p id="modal-desc">Description...</p>
+            </div>
+        </div>
     </div>
+    
+    
 
     <script src="portfolio.js"></script>
-  </body>
+</body>
 </html>

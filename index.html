@@ -1,52 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Galerie | Accueil</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <title>Portfolio ANDO</title>
+  </head>
+  <body>
 
+    <div class="custom-cursor" id="cursor"></div>
     <header class="app-nav">
-        <div class="logo">ANDO</div>
-        <nav class="nav-links">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="projects.html">Projets</a>
-            <a href="galerie.html">Passions</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <button id="theme-toggle" aria-label="Changer le thème">🌓</button>
+      <div class="logo">ANDO</div>
+      
+      <div class="burger-menu" id="burger-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="/index.html" class="active interactive">Accueil</a>
+        <a href="/about.html" class="interactive">À propos</a>
+        <a href="/projects.html" class="interactive">Projets</a>
+        <a href="/galerie.html" class="interactive">Galerie</a>
+      </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1 class="portfolio blink-title" :class="{ active: isActive }">PORTFOLIO</h1>
-            <button>Bienvenue dans mon univers</button>
-            <h2 class="subtitle">
-                Je conçois des <span id="typewriter"></span><span class="cursor">|</span>
-            </h2>
-            <div class="scroll-indicator">↓ Scroll</div>
-        </section>
+    <section class="hero">
+      <h1 class="portfolio blink-title" :class="{ active: isActive }">
+        PORTFOLIO
+      </h1>
+  
+    <!--<section class="tagline">
+        <h2 class="subtitle">
+          Je conçois des <span id="typewriter"></span
+          ><span class="cursor">|</span>
+          
+        </h2>
+    </section>-->
+    
+    
 
-        <section class="carousel-section">
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="carousel-item">Projet Alpha</div>
-                    <div class="carousel-item">Projet Beta</div>
-                    <div class="carousel-item">Design UI</div>
-                    <div class="carousel-item">Concept Art</div>
-                    <div class="carousel-item">Projet Alpha</div>
-                    <div class="carousel-item">Projet Beta</div>
-                    <div class="carousel-item">Design UI</div>
-                    <div class="carousel-item">Concept Art</div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div class="tape-wrapper_1">
+      <div class="tape-text_1">
+        <div class="conteneur_image_carousel">
+          <img class="image-carousel" src="/images/nextus_logo.png" alt="">
+          <img class="image-carousel" src="/images/sapik_logo-trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_infinite_trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_relous.jpg" alt="">
+          <img class="image-carousel" src="/images/cordee_logo_trans.png" alt="">
+          <img class="image-carousel" src="/images/nextus_logo.png" alt="">
+          <img class="image-carousel" src="/images/sapik_logo-trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_infinite_trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_relous.jpg" alt="">
+          <img class="image-carousel" src="/images/cordee_logo_trans.png" alt="">
+          <img class="image-carousel" src="/images/nextus_logo.png" alt="">
+          <img class="image-carousel" src="/images/sapik_logo-trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_infinite_trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_relous.jpg" alt="">
+          <img class="image-carousel" src="/images/cordee_logo_trans.png" alt="">
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="tape-wrapper_2">
+      <div class="tape-text_2">
+        <div class="conteneur_image_carousel">
+          
+          <img class="image-carousel" src="/images/cordee_logo_trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_relous.jpg" alt="">
+          <img class="image-carousel" src="/images/logo_infinite_trans.png" alt="">
+          <img class="image-carousel" src="/images/sapik_logo-trans.png" alt="">
+          <img class="image-carousel" src="/images/nextus_logo.png" alt="">
+          <img class="image-carousel" src="/images/cordee_logo_trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_relous.jpg" alt="">
+          <img class="image-carousel" src="/images/logo_infinite_trans.png" alt="">
+          <img class="image-carousel" src="/images/sapik_logo-trans.png" alt="">
+          <img class="image-carousel" src="/images/nextus_logo.png" alt="">
+          <img class="image-carousel" src="/images/cordee_logo_trans.png" alt="">
+          <img class="image-carousel" src="/images/logo_relous.jpg" alt="">
+          <img class="image-carousel" src="/images/logo_infinite_trans.png" alt="">
+          <img class="image-carousel" src="/images/sapik_logo-trans.png" alt="">
+          <img class="image-carousel" src="/images/nextus_logo.png" alt="">
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    </div>
+    
+    <div class="tape-wrapper_3">
+      <div class="tape-text_3">
+        MONTAGE VIDÉO ✦ UX/UI DESIGN ✦ GRAPHISME ✦ COMMUNICATION ✦
+        DEV FRONT ✦ 2D/3D ✦ MOTION DESGIN ✦ VR ✦ PHOTOGRAPHIE ✦
+        MONTAGE VIDÉO ✦ UX/UI DESIGN ✦ GRAPHISME ✦ COMMUNICATION ✦
+        DEV FRONT ✦ 2D/3D ✦ MOTION DESGIN ✦ VR ✦ PHOTOGRAPHIE
+      </div>
+    </div>
+    
+    
 
-    <script src="portfolio.js"></script>
-</body>
+    
+
+    <div class="cta-section interactive">
+        <a href="/projects.html" class="cta-button interactive ">Découvrir</a>
+    </div>
+
+    
+
+    <script src="/portfolio.js"></script>
+  </body>
 </html>

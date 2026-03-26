@@ -1,159 +1,387 @@
-/* Variables CSS pour le Dark/Light Mode */
 :root {
-    --bg-color: #f8f9fa; /* Blanc cassé */
-    --text-color: #121212; /* Noir profond */
-    --grid-color: rgba(0, 0, 0, 0.05);
-    --accent-color: #ff3b30; /* Touche de couleur type app (rouge iOS) */
-}
-
-/* Classe ajoutée via JS pour le mode sombre */
-body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #f8f9fa;
-    --grid-color: rgba(255, 255, 255, 0.05);
+  --bg-color: #050505;
+  --grid-color: rgba(255, 255, 255, 0.05);
+  --accent-color: #92e002; /* Bleu néon (Cyberpunk/Synthwave) */
+  --text-color: #ffffff;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none; /* On cache le curseur par défaut pour mettre le nôtre */
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    overflow-x: hidden;
-    
-    /* La grille japonaise minimaliste */
-    background-image: 
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 40px 40px;
+  background-color: var(--bg-color);
+  /* Création de la grille de fond */
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  color: var(--text-color);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Scrolling fluide */
+}
+
+/******************curseur */
+/* === 2. CURSEUR PERSONNALISÉ === */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none; /* Pour ne pas bloquer les clics */
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background-color 0.2s;
+  z-index: 9999;
+  background-color: rgb(154, 255, 95);
+}
+
+.custom-cursor.hovered {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(154, 255, 95, 0.007);
 }
 
 /* --- NAVIGATION --- */
 .app-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: transparent;
-    backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: transparent;
+  backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
+  z-index: 100;
 }
 
 .nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 400;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.nav-links a.active, .nav-links a:hover {
-    font-weight: 700;
-    border-bottom: 2px solid var(--accent-color);
+.nav-links a.active,
+.nav-links a:hover {
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-color);
 }
 
 #theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-/* pile de photo  **************/
-/* ====== GALERIE ====== */
-    .gallery {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-    }
 
-    .photo {
-      position: absolute;
-      width: 220px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 
-        transform 0.8s ease,
-        top 0.8s ease,
-        left 0.8s ease,
-        box-shadow 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
+/***********************************/
 
-    /* pile de photos au centre */
-    .stacked {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(var(--rotation));
-    }
 
-    .photo:hover {
-      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-    }
+.page-container {
+  padding: 120px 5% 50px 5%; /* Espace pour que  la navbar ne cache pas */
+  max-width: 1900px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
 
-    /* ====== MODAL ====== */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-    }
 
-    .modal-content {
-      background: #1a1a1a;
-      width: 80%;
-      height: 70%;
-      display: flex;
-      border-radius: 12px;
-      overflow: hidden;
-      animation: fadeIn 0.4s ease;
-    }
+/**************************************/
 
-    .modal img {
-      width: 50%;
-      object-fit: cover;
-    }
+.section-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 60px;
+    letter-spacing: -2px;
+}
 
-    .modal-text {
-      width: 50%;
-      padding: 30px;
-      overflow-y: auto;
-    }
+/* --- 4. GALERIE AVEC MENU LATÉRAL --- */
+.gallery-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 60px;
+    align-items: start;
+}
 
-    .modal-text h2 {
-      margin-bottom: 15px;
-    }
+.gallery-sidebar {
+    position: sticky;
+    top: 120px;
+    padding-right: 20px;
+    border-right: 5px solid var(--accent-color);
+}
 
-    .close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      font-size: 30px;
-      cursor: pointer;
-    }
+.gallery-sidebar h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+.filter-menu-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+}
+
+.filter-btn {
+    text-align: left;
+    padding: 12px 15px;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.filter-btn:hover {
+    background:  #92e002;
+}
+
+.filter-btn.active {
+    font-weight: 100;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #92e002;
+}
+
+.filter-btn.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 3px;
+    background:  #7502e0;
+}
+
+/* --- 5. GRILLE D'IMAGES --- */
+.minimal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.grid-item {
+    cursor: pointer;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.item-visual {
+    aspect-ratio: 4 / 3;
+    background: var(--grid-color);
+    overflow: hidden;
+    border: 1px solid var(--grid-color);
+}
+
+.item-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.grid-item:hover .item-visual img {
+    transform: scale(1.05);
+}
+
+/* --- 6. MODALE (FENÊTRE CONTEXTUELLE) --- */
+.gallery-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(var(--bg-color), 0.95);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    display: flex;
+    width: 95%;
+    max-width: 1800px;
+    max-height: 85vh;
+    background: var(--bg-color);
+    border: 1px solid var(--grid-color);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.modal-visual {
+    flex: 1.5;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+body.dark-mode .modal-visual { background: #000; }
+
+.modal-visual img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+}
+
+.modal-info {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-info h2 {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.modal-meta {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.5;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.modal-info p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* --- 7. ANIMATIONS & RESPONSIVE --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+    .gallery-layout { grid-template-columns: 1fr; }
+    .gallery-sidebar { position: relative; top: 0; border-right: none; border-bottom: 1px solid var(--grid-color); padding-bottom: 20px; margin-bottom: 30px; }
+    .filter-menu-vertical { flex-direction: row; flex-wrap: wrap; }
+    .modal-content { flex-direction: column; overflow-y: auto; }
+    .modal-visual { padding: 20px; }
+}
+
+
+
+
+/* === 7. MENU BURGER & RESPONSIVE === */
+
+/* Style du bouton burger (caché par défaut sur PC) */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 101; /* Toujours au-dessus du menu déployé */
+}
+
+/* Les 3 barres du burger */
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* MEDIA QUERY : Écrans de taille Tablette et Mobile */
+@media screen and (max-width: 768px) {
+  
+  /* On affiche le burger */
+  .burger-menu {
+    display: block;
+  }
+
+  /* On transforme la barre de liens en menu plein écran */
+  .nav-links {
+    position: fixed;
+    right: -100%; /* Caché hors de l'écran par défaut */
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(5, 5, 5, 0.95); /* Ton bg-color avec légère transparence */
+    backdrop-filter: blur(15px); /* Garde l'effet verre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+  }
+
+  /* On grossit et espace les liens pour le tactile */
+  .nav-links a {
+    margin: 20px 0;
+    font-size: 1.5rem;
+  }
+
+  /* Classe qui sera ajoutée en JS pour ouvrir le menu */
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  /* Animations pour transformer le burger en croix (X) quand il est ouvert */
+  .burger-menu.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: var(--accent-color); /* Devient couleur néon */
+  }
+  
+  .burger-menu.toggle .line2 {
+    opacity: 0;
+  }
+  
+  .burger-menu.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: var(--accent-color);
+  }
+  
+  /* Ajustement de ton titre "PORTFOLIO" pour qu'il rentre sur mobile */
+  .portfolio {
+    font-size: 18vw; 
+  }
+}

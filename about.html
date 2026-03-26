@@ -1,72 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Galerie | À propos</title>
-    <link rel="stylesheet" href="about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos</title>
+
+    <link rel="stylesheet" href="about.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+
+    <div class="custom-cursor" id="cursor"></div>
 
     <header class="app-nav">
-        <div class="logo">ANDO</div>
-        <nav class="nav-links">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="projects.html">Projets</a>
-            <a href="galerie.html">Passions</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <button id="theme-toggle" aria-label="Changer le thème">🌓</button>
+      <div class="logo">ANDO</div>
+      
+      <div class="burger-menu" id="burger-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="/index.html" class="interactive">Accueil</a>
+        <a href="/about.html" class="active interactive">À propos</a>
+        <a href="/projects.html" class="interactive">Projets</a>
+        <a href="/galerie.html" class="interactive">Galerie</a>
+      </nav>
     </header>
 
     <main class="page-container">
-        <section class="about-header">
-            <h1 class="section-title">Qui suis-je ?</h1>
-        </section>
+      <section class="about-header">
+        <h1 class="section-title">Andoniaina Pascal Tombozaza</h1>
+      </section>
 
-        <section class="bento-grid">
-            <div class="bento-item bio span-2">
-                <h2>Design & Code</h2>
-                <p>Je suis un créatif passionné par l'intersection entre l'art visuel et l'expérience utilisateur. Mon objectif est de créer des interfaces qui ne sont pas seulement fonctionnelles, mais qui procurent une véritable émotion, comme une œuvre dans une galerie.</p>
-            </div>
+      <section class="bento-grid">
+        <div class="bento-item bio span-2">
+          <h2>Design & Code</h2>
+          <p>
+            Je suis un créatif passionné par l'intersection entre l'art visuel
+            et l'expérience utilisateur. Mon objectif est de créer des
+            interfaces qui ne sont pas seulement fonctionnelles, mais qui
+            procurent une véritable émotion, comme une œuvre dans une galerie.
+          </p>
 
-            <div class="bento-item avatar">
-                <!--<div class="placeholder-image"></div>-->
-            </div>
+          <a href="/images/CV_tombozaza.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">Consulter CV</a>
+          
+        </div>
 
-            <div class="bento-item skills span-2">
-                <h3>Boîte à outils</h3>
-                <div class="tags">
-                    <span>Figma</span>
-                    <span>Adobe CC</span>
-                    <span>HTML/CSS</span>
-                    <span>JavaScript</span>
-                    <span>GSAP</span>
-                    <span>UX Research</span>
-                </div>
-            </div>
+        <div class="bento-item avatar">
+          <img src="/images/@oliash.photo-58.jpg" alt="">
+    
+        </div>
 
-            <!--<div class="bento-item stat">
-                <span class="big-number">carte localistion </span>
-                <p>paris </p>
-            </div>-->
+        <div class="bento-item skills span-2">
+          <h3>Boîte à outils</h3>
+          <div class="tags">
+            <span>Figma</span>
+            <span>Photoshop</span>
+            <span>Illustrator</span>
+            <span>Premier Pro</span>
+            <span>After Effects</span>
+            <span>Animate</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Javascipt</span>
+            <span>PHP</span>
+            <span>C#</span>
+            <span>Vue.js</span>
+            <span>P5.js</span>
+            <span>Wordpress</span>
+            <span>Unity</span>
+            <span>Blender</span>
+            <span>Maya</span>
 
-            <div class="bento-item stat">
-                <span class="big-number"> Formations</span>
-                <p>logos école </p>
-            </div>
+            <span>Webflow</span>
             
+          </div>
+        </div>
 
-            <div class="bento-item contact-box span-2">
-                <h3>Prêt à collaborer ?</h3>
-                <p>Transformons tes idées en expériences digitales mémorables.</p>
-                <a href="contact.html" class="btn-primary">Discuter du projet →</a>
-            </div>
-        </section>
+    
+
+        
+
+        <div class="bento-item contact-box ">
+          <h3 class="big-number">+2 ans exp</h3>
+          <p>Transformez votre idée en projet concret</p>
+          <a href="https://www.linkedin.com/in/andoniaina-tombozaza-387b35312" class="btn-primary">
+            Contacter
+          </a>
+        </div>
+
+        
+
+        
+
+        
+          
+          
     </main>
 
     <script src="portfolio.js"></script>
-</body>
+    
+  </body>
 </html>

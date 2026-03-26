@@ -1,0 +1,481 @@
+:root {
+  --bg-color: #050505;
+  --grid-color: rgba(255, 255, 255, 0.05);
+  --accent-color: #92e002; /* Bleu néon (Cyberpunk/Synthwave) */
+  --text-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none; /* On cache le curseur par défaut pour mettre le nôtre */
+}
+
+a{
+  color:var(--accent-color);
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  /* Création de la grille de fond */
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  color: var(--text-color);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Scrolling fluide */
+}
+
+/*container general baissser pour ne pas être caché par le nav*/
+.page-container {
+  margin: 5%;
+}
+
+
+/******************curseur */
+/* === 2. CURSEUR PERSONNALISÉ === */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  pointer-events: none; /* Pour ne pas bloquer les clics */
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background-color 0.2s;
+  z-index: 9999;
+  background-color: rgb(154, 255, 95);
+}
+
+.custom-cursor.hovered {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(154, 255, 95, 0.007);
+}
+
+
+
+/* --- NAVIGATION --- */
+.app-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: transparent;
+  backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
+  z-index: 100;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+
+
+/* --- page projet détail *************--- */
+
+/* Bouton retour */
+.back-btn {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+  margin-right: auto;
+  margin-left: 20px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.back-btn:hover {
+  opacity: 1;
+}
+
+/* Barre de progression de lecture */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--accent-color);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.1s ease-out;
+}
+
+/* En-tête */
+.cs-hero {
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+
+.cs-title {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+
+.cs-meta {
+  display: flex;
+  gap: 50px;
+  padding: 20px 0;
+}
+
+.meta-item span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  opacity: 0.5;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.meta-item p {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  
+}
+.tags span {
+  padding: 8px 15px;
+  background: var(--grid-color);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.tags span img{
+  width: 70px;
+}
+
+.tag-carre span {
+  padding: 8px 15px;
+  margin: 2px;
+  background: var(--grid-color);
+  border: 5px solid white;
+  
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+
+
+
+
+/* Couverture ****************************
+.cs-cover {
+  width: 100%;
+  height: 60vh;
+  border: 1px solid var(--grid-color);
+  margin-bottom: 80px;
+}
+
+.cover-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background:black;
+  background-image:url(/images/logo_infinite.png);
+  background-repeat:no-repeat ;
+  background-position: center;
+  
+  color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+}*/
+/****************************************/
+
+
+/*section info et photo apercu du projet *************************/
+
+.layout {
+  display: grid;
+  flex-direction: column;
+  gap: 10px; /* espace entre les deux */
+}
+
+/* container à gauche */
+.container{
+  order: 2;
+  flex: 1;
+}
+
+/* section à droite */
+.cs-hero {
+  order: 1;
+  flex: 1;
+}
+
+/* Style de base pour la visibilité */
+.column {
+  padding: 20px;
+  color: white;
+}
+
+.col-left {
+  background-color: #ffffff00;
+}
+
+.section_info{
+  border-top:5px solid #e0e0e0;
+  border-bottom:5px solid #e0e0e0;
+  margin-top: 10px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.info{
+  margin: 30px;
+}
+
+
+
+.col-right {
+  /*background-color: #2ecc71;*/
+  
+  height: auto;
+  width: 100%;
+  /*padding-bottom: 100px;*/
+  /*margin-bottom: 10px;*/
+  /*z-index: 100;*/
+  /*position: relative;
+  top: -230px;
+  left: 70px;*/
+  border: 5px solid #ffffff;
+}
+/*section info et photo apercu du projet *************************/
+
+
+/* 1. Configuration Flexbox */
+.container {
+  display: flex;
+  /* Par défaut : les éléments s'empilent (mode mobile) */
+  flex-direction: column; 
+  width: 100%;
+  min-height: 200px;
+}
+
+/* 2. Media Query pour les tablettes et ordinateurs */
+/* Dès que l'écran fait plus de 768px, on change la disposition */
+@media (min-width: 768px) {
+  .container {
+    /* On passe les éléments côte à côte */
+    flex-direction: row;
+  }
+
+  .column {
+    /* Chaque colonne prend 50% de la largeur */
+    flex: 1;
+  }
+}
+
+
+
+
+/* Galerie d'images du projet */
+.cs-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  gap: 30px;
+  margin-bottom: 100px;
+  overflow: hidden;
+  
+
+  
+}
+
+.cs-image-frame {
+  aspect-ratio: 4/3;
+  border: 1px solid var(--grid-color);
+  background: #e0e0e0;
+  margin: auto;
+  
+  
+
+}
+body.dark-mode .cs-image-frame {
+  background: #222;
+}
+
+.cs-image-frame.full-width {
+  grid-column: 1 / -1;
+  aspect-ratio: 21/9;
+}
+
+.cs-image-frame .placeholder img {
+  width: 100%;
+  /*height: 65vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  
+}
+
+/* Projet suivant */
+.cs-next-project {
+  text-align: center;
+  padding: 100px 0;
+  border-top: 1px solid var(--grid-color);
+}
+
+.cs-next-project p {
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.cs-next-project a {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.cs-next-project a:hover {
+  color: var(--accent-color);
+}
+
+/* Animations d'apparition */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cs-title {
+    font-size: 3rem;
+  }
+  .cs-meta,
+  .cs-content,
+  .cs-gallery {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .cs-meta {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+/* === 7. MENU BURGER & RESPONSIVE === */
+
+/* Style du bouton burger (caché par défaut sur PC) */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 101; /* Toujours au-dessus du menu déployé */
+}
+
+/* Les 3 barres du burger */
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* MEDIA QUERY : Écrans de taille Tablette et Mobile */
+@media screen and (max-width: 768px) {
+  
+  /* On affiche le burger */
+  .burger-menu {
+    display: block;
+  }
+
+  /* On transforme la barre de liens en menu plein écran */
+  .nav-links {
+    position: fixed;
+    right: -100%; /* Caché hors de l'écran par défaut */
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(5, 5, 5, 0.95); /* Ton bg-color avec légère transparence */
+    backdrop-filter: blur(15px); /* Garde l'effet verre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+  }
+
+  /* On grossit et espace les liens pour le tactile */
+  .nav-links a {
+    margin: 20px 0;
+    font-size: 1.5rem;
+  }
+
+  /* Classe qui sera ajoutée en JS pour ouvrir le menu */
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  /* Animations pour transformer le burger en croix (X) quand il est ouvert */
+  .burger-menu.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: var(--accent-color); /* Devient couleur néon */
+  }
+  
+  .burger-menu.toggle .line2 {
+    opacity: 0;
+  }
+  
+  .burger-menu.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: var(--accent-color);
+  }
+  
+  /* Ajustement de ton titre "PORTFOLIO" pour qu'il rentre sur mobile */
+  .portfolio {
+    font-size: 18vw; 
+  }
+}
