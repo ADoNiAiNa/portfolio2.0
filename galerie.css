@@ -101,10 +101,13 @@ body {
 /**************************************/
 
 .section-title {
-    font-size: 4rem;
+    font-size: 1.9rem;
     font-weight: 900;
-    margin-bottom: 60px;
+    margin: auto;
+    padding-bottom: 11px;
     letter-spacing: -2px;
+    justify-content: center;
+    align-items: center;
 }
 
 /* --- 4. GALERIE AVEC MENU LATÉRAL --- */
@@ -119,7 +122,7 @@ body {
     position: sticky;
     top: 120px;
     padding-right: 20px;
-    border-right: 5px solid var(--accent-color);
+    border-right: 5px solid white;
 }
 
 .gallery-sidebar h3 {
@@ -157,6 +160,7 @@ body {
     font-weight: 100;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     background-color: #92e002;
+    color: black;
 }
 
 .filter-btn.active::before {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Galerie | Projets</title>
-    <link rel="stylesheet" href="./projects.css" />
+    <link rel="stylesheet" href="/projects.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
       rel="stylesheet"
@@ -24,10 +24,10 @@
       </div>
 
       <nav class="nav-links" id="nav-links">
-        <a href="./index.html" class="interactive">Accueil</a>
-        <a href="./about.html" class="interactive">À propos</a>
-        <a href="./projects.html" class="active interactive">Projets</a>
-        <a href="./galerie.html" class="interactive">Galerie</a>
+        <a href="/index.html" class="interactive">Accueil</a>
+        <a href="/about.html" class="interactive">À propos</a>
+        <a href="/projects.html" class="active interactive">Projets</a>
+        <a href="/galerie.html" class="interactive">Galerie</a>
       </nav>
     </header>
 
@@ -43,8 +43,8 @@
           />-->
           <div class="filter-group">
             <button class="filter-btn active" data-filter="all">Tous</button>
-            <button class="filter-btn" data-filter="ux">sites web / applications</button>
-            <button class="filter-btn" data-filter="web">Audiovisuel</button>
+            <button class="filter-btn" data-filter="web">sites web / applications</button>
+            <button class="filter-btn" data-filter="video">Audiovisuel</button>
             <button class="filter-btn" data-filter="branding">Graphisme</button>
             <button class="filter-btn" data-filter="immersion">3D/VR</button>
           </div>
@@ -52,11 +52,26 @@
       </section>
 
       <section class="projects-grid" id="projects-grid">
+        <article class="project-card " data-category="web">
+          <div class="project-frame">
+            <div class="project-image-placeholder"><img src="/images/nextus_logo.png" alt="" srcset=""></div>
+            <div class="project-overlay">
+              <span ><a class="interactive" href="/nextus.html">Découvrir</a></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Next.Us</h3>
+            <p>Association</p>
+          </div>
+        </article>
+
+
+
         <article class="project-card " data-category="branding">
           <div class="project-frame">
-            <div class="project-image-placeholder"><img src="./images/logo_relous.jpg" alt="" srcset=""></div>
+            <div class="project-image-placeholder"><img src="/images/logo_relous.jpg" alt="" srcset=""></div>
             <div class="project-overlay">
-              <span ><a class="interactive" href="./projet_reloue/reloue.html">Découvrir</a></span>
+              <span ><a class="interactive" href="/reloue.html">Découvrir</a></span>
             </div>
           </div>
           <div class="project-info">
@@ -65,11 +80,11 @@
           </div>
         </article>
 
-        <article class="project-card interactive" data-category="branding">
+        <article class="project-card interactive" data-category="web">
           <div class="project-frame">
-            <div class="project-image-placeholder"><img src="./images/logo_infinite.png" alt="" srcset=""></div>
+            <div class="project-image-placeholder"><img src="/images/logo_infinite.png" alt="" srcset=""></div>
             <div class="project-overlay">
-              <span><a class="interactive" href="./projet_infinite/infinite.html">Découvrir</a></span>
+              <span><a class="interactive" href="/infinite.html">Découvrir</a></span>
             </div>
           </div>
           <div class="project-info">
@@ -80,9 +95,9 @@
 
         <article class="project-card interactive" data-category="branding">
           <div class="project-frame">
-            <div class="project-image-placeholder"><img src="./images/sapik_logo.jpg" alt="" srcset=""></div>
+            <div class="project-image-placeholder"><img src="/images/sapik_logo.jpg" alt="" srcset=""></div>
             <div class="project-overlay">
-              <span><a class="interactive" href="./projet_sapik/sapik.html">Découvrir</a></span>
+              <span><a class="interactive" href="/sapik.html">Découvrir</a></span>
             </div>
           </div>
           <div class="project-info">
@@ -91,9 +106,22 @@
           </div>
         </article>
 
+        <article class="project-card interactive" data-category="branding">
+          <div class="project-frame">
+            <div class="project-image-placeholder"><img src="/images/cordee_logo_trans.png" alt="" srcset=""></div>
+            <div class="project-overlay">
+              <span><a class="interactive" href="/corde.html">Découvrir</a></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Cordées de la réussite</h3>
+            <p>Dispositif national</p>
+          </div>
+        </article>
+
       </section>
     </main>
 
-    <script src="./portfolio.js"></script>
+    <script src="/portfolio.js"></script>
   </body>
 </html>
