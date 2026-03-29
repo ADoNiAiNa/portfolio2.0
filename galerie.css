@@ -186,7 +186,7 @@ body {
 }
 
 .item-visual {
-    aspect-ratio: 4 / 3;
+    /*aspect-ratio: 4 / 3;*/
     background: var(--grid-color);
     overflow: hidden;
     border: 1px solid var(--grid-color);
@@ -262,8 +262,9 @@ body.dark-mode .modal-visual { background: #000; }
 
 .modal-visual img {
     max-width: 100%;
-    max-height: 100vh;
+    max-height: 85vh;
     object-fit: contain;
+    
 }
 
 .modal-info {
