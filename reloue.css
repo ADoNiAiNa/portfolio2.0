@@ -242,6 +242,7 @@ body {
 .column {
   padding: 20px;
   color: white;
+  margin-bottom: 200px;
 }
 
 .col-left {
