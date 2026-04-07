@@ -242,7 +242,8 @@ body {
 .column {
   padding: 20px;
   color: white;
-  background-color: #ffffff;
+  margin-bottom: 100px;
+  
 }
 
 .col-left {
