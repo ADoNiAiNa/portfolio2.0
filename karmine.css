@@ -168,7 +168,7 @@ body {
 }
 .tags span {
   padding: 8px 15px;
-  background: var(--grid-color);
+  background: rgb(255, 255, 255);
   
   border-radius: 20px;
   font-size: 0.85rem;
