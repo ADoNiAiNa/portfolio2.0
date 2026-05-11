@@ -176,6 +176,10 @@ body.dark-mode .bento-item {
 .span-2 {
   grid-column: span 2;
 }
+
+.span-3 {
+  grid-column: span 3;
+}
 .span-row-2 {
   grid-row: span 2;
   justify-content: flex-start;
@@ -267,6 +271,10 @@ body.dark-mode .bento-item {
     grid-auto-rows: minmax(200px, auto);
   }
   .span-2 {
+    grid-column: span 1;
+  }
+
+  .span-3 {
     grid-column: span 1;
   }
   .span-row-2 {
