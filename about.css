@@ -178,7 +178,7 @@ body {
 
 .bento-item.client{
 
-  background-image: url(/images/linkedin.png);
+  background-image: url(./images/linkedin.png);
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
