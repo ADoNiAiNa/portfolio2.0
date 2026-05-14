@@ -145,28 +145,61 @@ body {
 
 /* Style de base d'une boîte Bento */
 .bento-item{
+ 
   background: transparent;
   backdrop-filter: blur(80px); /*Effet verre (Glassmorphism) */
   /*background: rgb(110, 238, 255);*/
-  border: 1px solid var(--grid-color); /* Rappel subtil de la grille du fond */
+  border: 0.5px solid var(--grid-color); /* Rappel subtil de la grille du fond */
   border-radius: 24px; /* Coins très ronds typiques du Bento/Apple */
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+
   transition:
     transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     box-shadow 0.3s ease;
 }
+
+.bento-item.experience:hover{
+  box-shadow: 0 2px 35px #92e002;
+}
+
+.bento-item.projet:hover{
+  
+  box-shadow: 0 2px 35px #b150d1;
+}
+
+.linkedin a img{
+  width: 80%;
+  margin: auto;
+  
+}
+
+
+
+.linkedin a img:hover{
+  box-shadow: 0 2px 35px #1b6eb3;
+  border-radius: 55px;
+  border: 2.5px solid white; 
+
+  
+  
+}
+
+
+
+.bento-item:hover{
+  border: 2.5px solid white; 
+ 
+}
+
 
 .bento-item.projet{
   background-color: #b150d1c6;
   font-size: 1.76rem;
   font-weight: 300;
   
-  
-
 }
 
 .bento-item.experience{
@@ -176,9 +209,13 @@ body {
   
 }
 
-.bento-item.client{
 
-  background-image: url(./images/linkedin.png);
+/*.bento-item.linkedin{
+  background: transparent;
+  backdrop-filter: blur(80px);
+  border: 0px solid var(--grid-color);
+
+  background-image: url(/images/linkedin.png);
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -186,8 +223,14 @@ body {
   justify-content: center;
   align-items: center;
 
-}
+}*/
 
+.colone-outil{
+  display: grid;
+  gap: 7px;
+  margin: auto auto 0px auto;
+  
+}
 
 /* Mode sombre spécifique pour les boîtes pour qu'elles ressortent */
 body.dark-mode .bento-item {
@@ -198,7 +241,7 @@ body.dark-mode .bento-item {
 /* Effet "Dopamine" au survol */
 .bento-item:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 35px rgb(255, 255, 255);
 }
 
 /* Gestion des tailles (Spanning) */
@@ -208,7 +251,14 @@ body.dark-mode .bento-item {
 
 .span-3 {
   grid-column: span 3;
+  height: 75vh;
 }
+
+h4{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .span-row-2 {
   grid-row: span 2;
   justify-content: flex-start;
@@ -240,7 +290,6 @@ body.dark-mode .bento-item {
   /*width:322px ;
   height:450px;*/
   width: 120%;
-  
   
 }
 
