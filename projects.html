@@ -1,63 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Galerie | Projets</title>
-    <link rel="stylesheet" href="./projects.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    
-    <div class="custom-cursor" id="cursor"></div>
 
-    <header class="app-nav">
-      <div class="logo">ANDO</div>
-      
-      <div class="burger-menu" id="burger-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Galerie </title>
+  <link rel="stylesheet" href="./projects.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
 
-      <nav class="nav-links" id="nav-links">
-        <a href="./index.html" class="interactive">Accueil</a>
-        <a href="./about.html" class="interactive">À propos</a>
-        <a href="./projects.html" class="active interactive">Projets</a>
-        <a href="./galerie.html" class="interactive">Galerie</a>
-      </nav>
-    </header>
+<body>
 
-    <main class="page-container">
-      <section class="projects-header">
-        <!--<h1 class="section-title">Exposition</h1>*/-->
+  <div class="custom-cursor" id="cursor"></div>
 
-        <div class="controls-container">
-          <!--<input
-            type="text"
-            id="project-search"
-            placeholder="Rechercher un projet..."
-          />-->
-          <div class="filter-group">
-            <button class="filter-btn active" data-filter="all">Tous</button>
-            <button class="filter-btn" data-filter="web">sites web / applications</button>
-            <button class="filter-btn" data-filter="video">Audiovisuel</button>
-            <button class="filter-btn" data-filter="branding">Graphisme</button>
-            <button class="filter-btn" data-filter="immersion">3D/VR</button>
-          </div>
+  <header class="app-nav">
+    <div class="logo">ANDO</div>
+
+    <div class="burger-menu" id="burger-menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="./index.html" class="interactive">Accueil</a>
+      <a href="./about.html" class="interactive">À propos</a>
+      <a href="./projects.html" class="active interactive">Projets</a>
+      <a href="./galerie.html" class=" interactive">Galerie</a>
+    </nav>
+  </header>
+
+  <main class="page-container gallery-container">
+
+   
+    <div class="gallery-layout">
+
+      <aside class="gallery-sidebar">
+        <h3>Catégories</h3>
+        <div class="filter-menu-vertical">
+          <button class="filter-btn active interactive" data-filter="all">Tous</button>
+          <button class="filter-btn interactive" data-filter="web">sites web / applications</button>
+          <button class="filter-btn interactive" data-filter="video">Audiovisuel</button>
+          <button class="filter-btn interactive" data-filter="branding">Graphisme</button>
+          <button class="filter-btn interactive" data-filter="immersion">3D/VR</button>
+
+
         </div>
-      </section>
+      </aside>
 
       <section class="projects-grid" id="projects-grid">
         <article class="project-card " data-category="web">
           <div class="project-frame">
             <div class="project-image-placeholder"><img src="./images/nextus_logo.png" alt="" srcset=""></div>
             <div class="project-overlay">
-              <span ><a class="interactive" href="./nextus.html">Découvrir</a></span>
+              <span><a class="interactive" href="./nextus.html">Découvrir</a></span>
             </div>
+            
           </div>
           <div class="project-info">
             <h3>Next.Us</h3>
@@ -71,7 +69,7 @@
           <div class="project-frame">
             <div class="project-image-placeholder"><img src="./images/logo_relous.jpg" alt="" srcset=""></div>
             <div class="project-overlay">
-              <span ><a class="interactive" href="./reloue.html">Découvrir</a></span>
+              <span><a class="interactive" href="./reloue.html">Découvrir</a></span>
             </div>
           </div>
           <div class="project-info">
@@ -103,19 +101,6 @@
           <div class="project-info">
             <h3>Sapik</h3>
             <p>Marque de sauce piquante</p>
-          </div>
-        </article>
-
-        <article class="project-card interactive" data-category="web">
-          <div class="project-frame">
-            <div class="project-image-placeholder"><img src="./images/logo_sparking.png" alt="" srcset=""></div>
-            <div class="project-overlay">
-              <span><a class="interactive" href="./sparking.html">Découvrir</a></span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Sparking</h3>
-            <p>Application</p>
           </div>
         </article>
 
@@ -162,7 +147,8 @@
 
         <article class="project-card interactive" data-category="video">
           <div class="project-frame">
-            <div class="project-image-placeholder"><img src="./images/affiche-portrait-nextus.jpg" alt="" srcset=""></div>
+            <div class="project-image-placeholder"><img src="./images/affiche-portrait-nextus.jpg" alt="" srcset="">
+            </div>
             <div class="project-overlay">
               <span><a class="interactive" href="./court_metrage.html">Découvrir</a></span>
             </div>
@@ -208,7 +194,7 @@
           </div>
           <div class="project-info">
             <h3>Karmine Corp</h3>
-            <p>Esport</p>
+            <p>Montage vidéo</p>
           </div>
         </article>
 
@@ -239,8 +225,16 @@
         </article>
 
       </section>
-    </main>
 
-    <script src="./portfolio.js"></script>
-  </body>
+
+    </div>
+  </main>
+
+  
+
+
+
+  <script src="./portfolio.js"></script>
+</body>
+
 </html>
