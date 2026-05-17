@@ -5,11 +5,6 @@
   --text-color: #ffffff;
 }
 
-.project-overlay span a{
-  color: var(--accent-color);
-  text-decoration: none;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +24,6 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth; /* Scrolling fluide */
 }
-
 
 /******************curseur */
 /* === 2. CURSEUR PERSONNALISÉ === */
@@ -57,8 +51,6 @@ body {
   background-color: rgba(154, 255, 95, 0.007);
 }
 
-
-
 /* --- NAVIGATION --- */
 .app-nav {
   position: fixed;
@@ -71,6 +63,8 @@ body {
   background: transparent;
   backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
   z-index: 100;
+
+  border-bottom: 0.5px solid white;
 }
 
 .nav-links a {
@@ -86,69 +80,276 @@ body {
 .nav-links a.active,
 .nav-links a:hover {
   font-weight: 700;
-  border-bottom: 2px solid var(--accent-color);
+  padding: 20px 0 20px 0;
+
+  /*********/
+  box-shadow: 0 1px 35px #92e002;
+  border: 2.5px solid white;
+  border-top: 12px;
+  border-bottom: 12px;
 }
 
-/*#theme-toggle {
+#theme-toggle {
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-}*/
+}
 
-/*container general baissser pour ne pas être caché par le nav*/
 .page-container {
-  margin: 90px 25px 90px 25px;
-
-}
-
-/* --- SECTION PROJETS --- */
-.controls-container {
-  display: flex;
-  justify-content: space-between;
+  padding: 120px 5% 50px 5%; /* Espace pour que  la navbar ne cache pas */
+  max-width: 1900px;
+  margin: 0 auto;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
-  gap: 20px;
-  flex-wrap: wrap;
 }
 
-#project-search {
-  padding: 15px 25px;
-  border-radius: 50px;
-  border: 1px solid var(--grid-color);
-  background: var(--bg-color);
-  color: var(--text-color);
-  width: 300px;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.3s;
+/**************************************/
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 900;
+  margin: auto;
+  padding-bottom: 11px;
+  letter-spacing: -2px;
+  justify-content: center;
+  align-items: center;
 }
 
-#project-search:focus {
-  border-color: var(--accent-color);
+/* --- 4. GALERIE AVEC MENU LATÉRAL --- */
+.gallery-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.filter-group {
+.gallery-sidebar {
+  background: transparent;
+  backdrop-filter: blur(80px); /*Effet verre (Glassmorphism) */
+  /*background: rgb(110, 238, 255);*/
+  border: 0.5px solid white; /* Rappel subtil de la grille du fond */
+  border-radius: 24px; /* Coins très ronds typiques du Bento/Apple */
+
   display: flex;
-  gap: 10px;
-  z-index: 10;
+  flex-direction: column;
+  justify-content: center;
+
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.3s ease;
+
+  position: sticky;
+  top: 120px;
+  padding: 20px;
+  
+}
+
+.gallery-sidebar h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.filter-menu-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: sticky;
 }
 
 .filter-btn {
-  padding: 10px 20px;
-  border: 2px solid white;
+  text-align: left;
+  padding: 12px 15px;
   background: transparent;
+  border: none;
   color: var(--text-color);
+  font-family: inherit;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  position: relative;
 }
 
-.filter-btn.active,
+/************************************/
+
 .filter-btn:hover {
-  background: var(--accent-color);
-  color: var(--bg-color);
+  /**/
+  box-shadow: 0 2px 35px #92e002;
+  border-radius: 55px;
+  border: 2.5px solid white;
+}
+
+.filter-btn.active {
+  font-weight: 100;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  box-shadow: 0 2px 35px #92e002;
+  border-radius: 55px;
+  border: 2.5px solid white;
+
+  background-color: white;
+  color: #000000;
+}
+
+/************************************/
+
+.filter-btn.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 3px;
+  /*background:  #7502e0;*/
+}
+
+/* --- 5. GRILLE D'IMAGES --- */
+.minimal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 50px;
+}
+
+.grid-item {
+  cursor: pointer;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.item-visual {
+  /*aspect-ratio: 4 / 3;*/
+  background: var(--grid-color);
+  overflow: hidden;
+  border: 1px solid var(--grid-color);
+}
+
+.item-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.grid-item:hover .item-visual img {
+  transform: scale(1.05);
+}
+
+/* --- 7. ANIMATIONS & RESPONSIVE --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery-layout {
+    grid-template-columns: 1fr;
+  }
+  .gallery-sidebar {
+    position: relative;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--grid-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  .filter-menu-vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .modal-content {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .modal-visual {
+    padding: 20px;
+  }
+}
+
+/* === 7. MENU BURGER & RESPONSIVE === */
+
+/* Style du bouton burger (caché par défaut sur PC) */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 101; /* Toujours au-dessus du menu déployé */
+}
+
+/* Les 3 barres du burger */
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* MEDIA QUERY : Écrans de taille Tablette et Mobile */
+@media screen and (max-width: 768px) {
+  /* On affiche le burger */
+  .burger-menu {
+    display: block;
+  }
+
+  /* On transforme la barre de liens en menu plein écran */
+  .nav-links {
+    position: fixed;
+    right: -100%; /* Caché hors de l'écran par défaut */
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(
+      5,
+      5,
+      5,
+      0.95
+    ); /* Ton bg-color avec légère transparence */
+    backdrop-filter: blur(15px); /* Garde l'effet verre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+  }
+
+  /* On grossit et espace les liens pour le tactile */
+  .nav-links a {
+    margin: 20px 0;
+    font-size: 1.5rem;
+  }
+
+  /* Classe qui sera ajoutée en JS pour ouvrir le menu */
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  /* Animations pour transformer le burger en croix (X) quand il est ouvert */
+  .burger-menu.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: var(--accent-color); /* Devient couleur néon */
+  }
+
+  .burger-menu.toggle .line2 {
+    opacity: 0;
+  }
+
+  .burger-menu.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: var(--accent-color);
+  }
+
+  /* Ajustement de ton titre "PORTFOLIO" pour qu'il rentre sur mobile */
+  .portfolio {
+    font-size: 18vw;
+  }
 }
 
 /* Grille de projets (Exposition) */
@@ -190,9 +391,7 @@ body.dark-mode .project-frame {
 
 .project-image-placeholder img {
   width: 100%;
-  
 }
-
 
 /* Effet Overlay (Dopamine / Récompense) */
 .project-overlay {
@@ -210,11 +409,11 @@ body.dark-mode .project-frame {
 }
 
 .project-overlay span {
-  color: white;
-  border: 1px solid white;
+  background-color: #ffffff;
+  
   padding: 10px 20px;
   border-radius: 50px;
-  transform: translateY(20px);
+  
   transition: transform 0.3s ease;
 }
 
@@ -229,7 +428,11 @@ body.dark-mode .project-frame {
 }
 
 .project-info {
-  margin-top: 20px;
+  /*margin-top: 20px;*/
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+  padding: 15px;
 }
 
 .project-info h3 {
@@ -250,96 +453,5 @@ body.dark-mode .project-frame {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-
-
-
-
-/* === 7. MENU BURGER & RESPONSIVE === */
-
-/* Style du bouton burger (caché par défaut sur PC) */
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  z-index: 101; /* Toujours au-dessus du menu déployé */
-}
-
-/* Les 3 barres du burger */
-.burger-menu div {
-  width: 25px;
-  height: 3px;
-  background-color: var(--text-color);
-  margin: 5px;
-  transition: all 0.3s ease;
-  border-radius: 2px;
-}
-
-/* MEDIA QUERY : Écrans de taille Tablette et Mobile */
-@media screen and (max-width: 768px) {
-
-  .filter-group {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  gap: 10px;
-  z-index: 10;
-  
-  }
-
-
-  
-  /* On affiche le burger */
-  .burger-menu {
-    display: block;
-  }
-
-  /* On transforme la barre de liens en menu plein écran */
-  .nav-links {
-    position: fixed;
-    right: -100%; /* Caché hors de l'écran par défaut */
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(5, 5, 5, 0.95); /* Ton bg-color avec légère transparence */
-    backdrop-filter: blur(15px); /* Garde l'effet verre */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 100;
-  }
-
-  /* On grossit et espace les liens pour le tactile */
-  .nav-links a {
-    margin: 20px 0;
-    font-size: 1.5rem;
-  }
-
-  /* Classe qui sera ajoutée en JS pour ouvrir le menu */
-  .nav-links.nav-active {
-    right: 0;
-  }
-
-  /* Animations pour transformer le burger en croix (X) quand il est ouvert */
-  .burger-menu.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-    background-color: var(--accent-color); /* Devient couleur néon */
-  }
-  
-  .burger-menu.toggle .line2 {
-    opacity: 0;
-  }
-  
-  .burger-menu.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-    background-color: var(--accent-color);
-  }
-  
-  /* Ajustement de ton titre "PORTFOLIO" pour qu'il rentre sur mobile */
-  .portfolio {
-    font-size: 18vw; 
   }
 }
