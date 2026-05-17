@@ -85,9 +85,13 @@ body {
   /*********/
   box-shadow: 0 1px 35px #92e002;
   border: 2.5px solid white;
+  border-left: 12px;
+  border-right: 12px;
   border-top: 12px;
-  border-bottom: 12px;
+
+  
 }
+/************************/
 
 #theme-toggle {
   background: none;
