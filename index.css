@@ -58,6 +58,7 @@ body {
 /*header********************************/
 
 /* --- NAVIGATION --- */
+/* --- NAVIGATION --- */
 .app-nav {
   position: fixed;
   top: 0;
@@ -69,6 +70,8 @@ body {
   background: transparent;
   backdrop-filter: blur(10px); /* Effet verre (Glassmorphism) */
   z-index: 100;
+
+  border-bottom: 0.5px solid white;
 }
 
 .nav-links a {
@@ -84,8 +87,19 @@ body {
 .nav-links a.active,
 .nav-links a:hover {
   font-weight: 700;
-  border-bottom: 2px solid var(--accent-color);
+  padding: 20px 0 20px 0;
+
+  /*********/
+  box-shadow: 0 1px 35px #92e002;
+  border: 2.5px solid white;
+  border-left: 12px;
+  border-right: 12px;
+  border-top: 12px;
+
+  
 }
+/************************/
+
 
 /*hero section*****/
 /* --- HERO SECTION --- */
