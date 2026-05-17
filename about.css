@@ -145,11 +145,12 @@ body {
 
 /* Style de base d'une boîte Bento */
 .bento-item{
+  
  
   background: transparent;
   backdrop-filter: blur(80px); /*Effet verre (Glassmorphism) */
   /*background: rgb(110, 238, 255);*/
-  border: 0.5px solid var(--grid-color); /* Rappel subtil de la grille du fond */
+  border: 0.5px solid white; /* Rappel subtil de la grille du fond */
   border-radius: 24px; /* Coins très ronds typiques du Bento/Apple */
   padding: 30px;
   display: flex;
