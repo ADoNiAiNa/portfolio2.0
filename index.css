@@ -58,7 +58,7 @@ body {
 /*header********************************/
 
 /* --- NAVIGATION --- */
-/* --- NAVIGATION --- */
+
 .app-nav {
   position: fixed;
   top: 0;
@@ -210,7 +210,7 @@ body {
   /*left: -10%;*/
   width: 120%;
  background-color: white;
-  color: #000000;
+  color: #ffffff;
   /*transform: rotate(-14deg);*/
   padding: 10px 0;
   opacity: 0.4;
@@ -235,7 +235,7 @@ body {
 .tape-text_3 {
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 3rem;
-  font-weight: 800;
+  /*font-weight: 800;*/
   white-space: nowrap;
   animation: tapeScroll_3 25s linear infinite;
 }
