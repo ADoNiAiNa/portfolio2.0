@@ -172,7 +172,7 @@ body {
   height: 80px;
 
   justify-content: flex-start;
-  background-color: white;
+  /*background-color: white;*/
   color: #000000;
   opacity: 0.4;
   /*transform: rotate(14deg);*/
