@@ -180,7 +180,7 @@ body {
 
 .filter-btn:hover {
   /**/
-  box-shadow: 0 2px 35px #92e002;
+  box-shadow: 0 2px 35px #ffffff;
   border-radius: 55px;
   border: 2.5px solid white;
 }
@@ -189,7 +189,7 @@ body {
   font-weight: 100;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-  box-shadow: 0 2px 35px #92e002;
+  box-shadow: 0 2px 35px #ffffff;
   border-radius: 55px;
   border: 2.5px solid white;
 
