@@ -324,7 +324,7 @@ body {
   border-radius: 50px;
   font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px var(--accent-color);
+  box-shadow: 0 0 15px #ffffff;
 }
 
 .cta-button:hover {
