@@ -210,6 +210,14 @@ body {
 }
 
 /* --- 5. GRILLE D'IMAGES --- */
+.interactive{
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
 .minimal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
