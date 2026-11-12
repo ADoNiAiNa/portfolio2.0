@@ -319,7 +319,7 @@ body {
   padding: 1rem 4rem;
   font-size: 1.5rem;
   color: var(--bg-color);
-  background-color: var(--accent-color);
+  background-color: #ffffff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: bold;
